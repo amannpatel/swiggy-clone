@@ -1,5 +1,6 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .header {
@@ -8,6 +9,12 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
+}
+
+.nav-items > ul > li > a {
+  text-decoration: none;
+  color: orange;
+  font-weight: bold;
 }
 
 .logo {
@@ -37,9 +44,14 @@ body {
 .res-card {
   border-radius: 8px;
   padding: 8px;
-  margin: 15px;
+  margin: 20px;
   width: 230px;
-  height: 380px;
+  height: 410px;
+  color: rgb(48, 48, 48);
+}
+
+.res-container > a {
+  text-decoration: none;
 }
 
 .res-card:hover {

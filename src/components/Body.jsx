@@ -39,44 +39,47 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="controls-group">
-        <input
-          type="text"
-          value={searchText}
-          onChange={(e) => {
-            // console.log(e.target.value);
-            setSearchText(e.target.value);
-          }}
-        />
-        <button
-          className="search-btn"
-          onClick={() => {
-            const searchList = listOfRestaurant.filter((res) => {
-              return res.info.name
-                .toLowerCase()
-                .includes(searchText.toLowerCase());
-            });
-            // console.log(searchList);
-            setFilteredRestaurant(searchList);
-          }}
-        >
-          Search
-        </button>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const filteredList = listOfRestaurant.filter((res) => {
-              return res.info.avgRating > 4.4;
-            });
-            // console.log(filteredList);
-            setFilteredRestaurant(filteredList);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+      <div className="filter">
+        <div className="search m-4 p-4">
+          <input
+            className="border-2 border-solid border-orange-200 rounded"
+            type="text"
+            value={searchText}
+            onChange={(e) => {
+              // console.log(e.target.value);
+              setSearchText(e.target.value);
+            }}
+          />
+          <button
+            className="px-4 py-1 bg-orange-200 m-4 rounded hover:bg-orange-100"
+            onClick={() => {
+              const searchList = listOfRestaurant.filter((res) => {
+                return res.info.name
+                  .toLowerCase()
+                  .includes(searchText.toLowerCase());
+              });
+              // console.log(searchList);
+              setFilteredRestaurant(searchList);
+            }}
+          >
+            Search
+          </button>
+          <button
+            className="px-4 py-1 bg-gray-200 rounded hover:bg-gray-100"
+            onClick={() => {
+              const filteredList = listOfRestaurant.filter((res) => {
+                return res.info.avgRating > 4.4;
+              });
+              // console.log(filteredList);
+              setFilteredRestaurant(filteredList);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
       </div>
 
-      <div className="res-container">
+      <div className="flex flex-wrap justify-evenly">
         {filteredRestaurant.map((restaurant) => (
           <Link
             key={restaurant.info.id}

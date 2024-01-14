@@ -80,7 +80,7 @@ const Body = () => {
           </button>
         </div>
       </div>
-      {console.log(filteredRestaurant)}
+      {/* {console.log(filteredRestaurant)} */}
       <div className="flex flex-wrap justify-evenly">
         {filteredRestaurant.map((restaurant) => (
           <Link
